@@ -45,7 +45,7 @@ var processMessage = function(message) {
 			break;
 
 		default:
-			strMessage = `Command "${message.content} not recognized."`;
+			strMessage = `Command "${message.content} not recognized.`;
 	}
 
 	// Save user data if needed

@@ -17,6 +17,7 @@ var myClientID;
 
 const commandPrefix = '!PK';
 
+var bEnabled = true;
 var commandQueue = [];
 
 // The ready event is vital, it means that your bot will only start reacting to information
@@ -32,6 +33,26 @@ client.on('message', message => {
 	if (!inputIsACommand(message.content)) {
 		return;
 	}
+	
+	if (inputMatchesCommand(message.content, 'Enable')) {
+		message.channel.send((bEnabled) ? 
+			'PK-Bot is already enabled.' :
+			'PK-Bot re-enabled.'
+		);
+		bEnabled = true;
+		return;
+	} else if (inputMatchesCommand(message.content, 'Disable')) {
+		message.channel.send((bEnabled) ? 
+			'PK-Bot disabled, re-enabled with "!PKEnable".' :
+			'PK-Bot is already disabled.');
+		bEnabled = false;
+		return;
+	}
+
+	if (!bEnabled) {
+		return;
+	}
+
 	message.content = removeCommandPrefix(message.content);
 	
 	if (message.author.id === myClientID) {
