@@ -11,7 +11,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 // The token of your bot - https://discordapp.com/developers/applications/me
-const token = '';
+var token = '';
 
 var myClientID;
 
@@ -89,6 +89,12 @@ filterMessages = function() {
 	}
 	commandQueue.length = 0;
 	return userMessages;
+}
+
+// Read token from environment variable if user doesn't specify one
+var envToken = process.env.DISCORD_BOT_TOKEN;
+if (token.length <= 0 && envToken) {
+    token = envToken;
 }
 
 // Log our bot in
