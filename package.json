@@ -1,0 +1,21 @@
+{
+  "name": "DiscordBot",
+  "version": "0.0.0",
+  "description": "Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Heilion/DiscordBot.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Heilion/DiscordBot/issues"
+  },
+  "dependencies": {
+    "discord.js": "^11.1.0"
+  }
+}

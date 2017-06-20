@@ -1,0 +1,89 @@
+{
+	"ModuleID": "FishingItems"
+	,
+	"Entities" : 
+	[
+		{
+			"Name" : "Boot",
+			"Rarity" : "Common",
+			"ID": 1,
+			"Emote": "<:igot:232908888842829824>"
+		}
+		,
+		{
+			"Name" : "Fish",
+			"Rarity" : "Uncommon",
+			"ID": 2
+		}
+		,
+		{
+			"Name" : "Treasure",
+			"Rarity" : "Rare",
+			"ID": 3
+		}
+		,
+		{
+			"Name" : "Tin Can",
+			"Rarity" : "Common",
+			"ID": 5
+		}
+		,
+		{
+			"Name" : "Andy's Friendship",
+			"Rarity" : "Legendary",
+			"ID": 6,
+			"Emote": "<:kappapride:279091053146013696>"
+		}
+		,
+		{
+			"Name" : "Jimmy's Friendship",
+			"Rarity" : "Legendary",
+			"ID": 7,
+			"Emote": "<:kappapride:279091053146013696>"
+		}
+		,
+		{
+			"Name" : "Hei Hei's Friendship",
+			"Rarity" : "Legendary",
+			"ID": 8,
+			"Emote": "<:kappapride:279091053146013696>"
+		}
+		,
+		{
+			"Name" : "Kevin's Friendship",
+			"Rarity" : "Common",
+			"ID": 9,
+			"Emote": "<:kcorn:297964125110140930>"
+		}
+		,
+		{
+			"Name" : "Jimmy's Waifu",
+			"Rarity" : "Common",
+			"ID": 10
+		}
+	],
+	
+	"Rarities" :
+	[
+		{
+			"Rarity": "Common",
+			"Percentage": 65
+		}
+		,
+		{
+			"Rarity": "Uncommon",
+			"Percentage": 25
+		}
+		,
+		{
+			"Rarity": "Rare",
+			"Percentage": 9
+		}
+		,
+		{
+			"Rarity": "Legendary",
+			"Percentage": 1
+		}
+	]
+	
+}
