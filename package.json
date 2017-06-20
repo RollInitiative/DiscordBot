@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Heilion/DiscordBot.git"
+    "url": "https://github.com/RollInitiative/DiscordBot.git"
   },
   "author": "",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/Heilion/DiscordBot/issues"
+    "url": "https://github.com/RollInitiative/DiscordBot/issues"
   },
   "dependencies": {
     "discord.js": "^11.1.0"
