@@ -110,9 +110,11 @@ filterMessages = function() {
 
 // Parse through environment file to turn key-value into variables
 const fs = require('fs');
-var data = fs.readFileSync('./.env')
-if (data == null) {
-	throw err; 
+try {
+	var data = fs.readFileSync('./.env')
+} catch (error) {
+	console.log("Error: Cannot read .env file");
+	process.exit(1);
 }
 
 data.toString().split('\n').forEach(function (line) {
