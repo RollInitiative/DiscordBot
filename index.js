@@ -2,16 +2,12 @@
   A ping pong bot, whenever you send "ping", it replies "pong".
 */
 var model = require('./src/model/model');
-var config = require('./config.json');
 
 // Import the discord.js module
 const Discord = require('discord.js');
 
 // Create an instance of a Discord client
 const client = new Discord.Client();
-
-// The token of your bot - https://discordapp.com/developers/applications/me
-var token = '';
 
 var myClientID;
 
@@ -112,14 +108,37 @@ filterMessages = function() {
 	return userMessages;
 }
 
-// Read token from environment variable if user doesn't specify one
-var envToken = process.env.DISCORD_BOT_TOKEN;
-if (token.length <= 0 && envToken) {
-    token = envToken;
+// Parse through environment file to turn key-value into variables
+const fs = require('fs');
+var data = fs.readFileSync('./.env')
+if (data == null) {
+	throw err; 
+}
+
+data.toString().split('\n').forEach(function (line) {
+	// looks for key value pairs seperated by '='
+	var arr = line.match(/^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/);
+
+	if (arr != null) {
+		var key = arr[1];
+		var value = arr[2];
+
+		if (value && !process.env.hasOwnProperty(key)) {
+			// assign variable to nodes built-in environment object map
+			process.env[key] = value;
+		}
+	}
+});
+
+// Make sure the user has set a bot token
+var token = process.env.BOT_TOKEN;
+if (!token) {
+	console.log("Error: BOT_TOKEN not specified");
+	process.exit(1);
 }
 
 // Log our bot in
 client.login(token);
 
-var tickInterval = (1000 * 60) / config.ServerTicksPerMinute;
+var tickInterval = (1000 * 60) / process.env.ServerTicksPerMinute;
 setTimeout(serverLoop, tickInterval);

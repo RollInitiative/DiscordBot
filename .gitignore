@@ -1,53 +1,4 @@
-
-Skip to content
-This repository
-
-    Pull requests
-    Issues
-    Marketplace
-    Gist
-
-    @dsafa
-
-2,091
-51,311
-
-    21,980
-
-github/gitignore
-Code
-Pull requests 145
-Projects 0
-gitignore/Node.gitignore
-978d926 on Feb 8
-@adjohnson916 adjohnson916 fix(Node): ignore yarn logs
-@stuartpb
-@shiftkey
-@ro31337
-@melonmanchan
-@Gouthamve
-@jucrouzet
-@cheddar
-@arcresu
-@sroberts
-@rsolomo
-@peat
-@noinkling
-@MikeRalphson
-@shtr0m
-@kerimdzhanov
-@joreyaesh
-@jenrik
-@izuzak
-@iamsebastian
-@luiscoms
-@levrik
-@cyrbil
-@morrislaptop
-@indexzero
-@bbodenmiller
-@aoberoi
-60 lines (42 sloc) 884 Bytes
+### Node ###
 # Logs
 logs
 *.log
@@ -106,8 +57,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-    Contact GitHub API Training Shop Blog About 
-
-    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
-
