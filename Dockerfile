@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 
 # Copy App Over
 COPY . /usr/src/app/
+COPY .env.example /usr/src/app/.env
 RUN npm install
 
 # Start the bot
