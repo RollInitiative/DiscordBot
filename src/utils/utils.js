@@ -16,6 +16,45 @@ getItemIDFromFullItemID = function(fullItemID) {
 	return idParts.itemID;
 }
 
+generateLootTable = function(data) {
+	var lootTable = { 'rarityTable': [], 'rarityToItemDict': {} };
+
+	moduleID = data.ModuleID;
+	data.Entities.forEach(obj => {
+
+		var rarity = obj.Rarity;
+		if (lootTable.rarityToItemDict[rarity] == null) {
+			lootTable.rarityToItemDict[rarity] = [];
+		}
+		lootTable.rarityToItemDict[rarity].push(obj);
+	});
+
+	var percentageCounter = 0;
+	data.Rarities.forEach(obj => {
+		percentageCounter += parseInt(obj.Percentage);
+		lootTable.rarityTable.push([percentageCounter, obj.Rarity]);
+	});
+
+	return lootTable;
+}
+
+rollFromLootTable = function(lootTable) {
+	var roll = Math.random() * lootTable.rarityTable[lootTable.rarityTable.length - 1][0];
+	var item;
+	
+	for (var i = 0; i < lootTable.rarityTable.length; i++)
+	{
+		var rarityList = lootTable.rarityTable[i];
+		if (roll < rarityList[0]) {
+			var rarity = rarityList[1];
+			var secondRoll = parseInt(Math.random() * lootTable.rarityToItemDict[rarity].length);
+			item = lootTable.rarityToItemDict[rarity][secondRoll];
+			break;
+		}
+	}
+	return item;
+}
+
 module.exports = {
 	
 	concatFullItemID: function(moduleID, itemID) {
@@ -37,5 +76,8 @@ module.exports = {
 	itemIDBelongsToModule: itemIDBelongsToModule
 	,
 	getItemIDFromFullItemID : getItemIDFromFullItemID
-	
+	,
+	generateLootTable: generateLootTable
+	,
+	rollFromLootTable: rollFromLootTable
 };
