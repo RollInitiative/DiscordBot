@@ -39,7 +39,7 @@ client.on('message', message => {
 		return;
 	} else if (inputMatchesCommand(message.content, 'Disable')) {
 		message.channel.send((bEnabled) ? 
-			'PK-Bot disabled, re-enabled with "!PKEnable".' :
+			'PK-Bot disabled, re-enable with "!PKEnable".' :
 			'PK-Bot is already disabled.');
 		bEnabled = false;
 		return;
