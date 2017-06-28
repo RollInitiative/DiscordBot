@@ -1,0 +1,42 @@
+{
+	"ModuleID": "Monsters",
+	"Entities":
+	[
+		{
+			"Name" : "Goblin",
+			"Rarity" : "Common",
+			"ID" : 1
+		},
+		{
+			"Name" : "Kobold",
+			"Rarity" : "Common",
+			"ID" : 2
+		},
+		{
+			"Name" : "Hobgoblin",
+			"Rarity" : "Uncommon",
+			"ID" : 3
+		},
+		{
+			"Name" : "Tonberry",
+			"Rarity" : "Legendary",
+			"ID" : 4
+		}
+	],
+	
+	"Rarities":
+	[
+		{
+			"Rarity": "Common",
+			"Percentage": 65
+		},
+		{
+			"Rarity": "Uncommon",
+			"Percentage": 34
+		},
+		{
+			"Rarity": "Legendary",
+			"Percentage": 1
+		}
+	]
+}

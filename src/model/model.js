@@ -1,5 +1,6 @@
 var fishing = require('./../fishing/fishing');
 var saving = require('./../saving/saving');
+var hunting = require('./../monsters/monsters');
 
 var users = {};
 
@@ -42,6 +43,12 @@ var processMessage = function(message) {
 				bNeedSaving = true;
 				strMessage += userID + ' set name to ' + users[userID].Name + '\n';
 			}
+			break;
+
+		case 'Hunt':
+			var user = users[userID];
+			strMessage += hunting.hunt(message.channel, user);
+			bNeedSaving = false;
 			break;
 
 		default:
