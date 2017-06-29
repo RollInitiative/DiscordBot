@@ -1,3 +1,4 @@
+const replaceData = require('./data/letter_replacement.json');
 const token = '|';
 
 splitFullItemID = function(fullItemID) {
@@ -18,7 +19,6 @@ getItemIDFromFullItemID = function(fullItemID) {
 
 generateLootTable = function(data) {
 	var lootTable = { 'rarityTable': [], 'rarityToItemDict': {} };
-
 	moduleID = data.ModuleID;
 	data.Entities.forEach(obj => {
 
@@ -55,6 +55,18 @@ rollFromLootTable = function(lootTable) {
 	return item;
 }
 
+translateString = function(string) {
+	
+	var newString = '';
+	for (var i = 0; i < string.length; i++) {
+		var char = replaceData.Replacements[string[i]];
+		if (char != null) {
+			newString += char;
+		}
+	}
+	return newString;
+}
+
 module.exports = {
 	
 	concatFullItemID: function(moduleID, itemID) {
@@ -80,4 +92,6 @@ module.exports = {
 	generateLootTable: generateLootTable
 	,
 	rollFromLootTable: rollFromLootTable
+	,
+	translateString: translateString
 };

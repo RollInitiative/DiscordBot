@@ -1,5 +1,6 @@
 var fishing = require('./../fishing/fishing');
 var saving = require('./../saving/saving');
+var utils = require('./../utils/utils');
 
 var users = {};
 
@@ -41,6 +42,13 @@ var processMessage = function(message) {
 				users[userID].Name = strCommands[1];
 				bNeedSaving = true;
 				strMessage += userID + ' set name to ' + users[userID].Name + '\n';
+			}
+			break;
+
+		case 'Replace':
+			if (strCommands.length > 1) {
+				var strArguments = strCommands.slice(1).join(' ');
+				strMessage += utils.translateString(strArguments);
 			}
 			break;
 
