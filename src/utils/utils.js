@@ -61,7 +61,7 @@ translateString = function(string) {
 	for (var i = 0; i < string.length; i++) {
 		var char = replaceData.Replacements[string[i]];
 		if (char != null) {
-			newString += char;
+			newString += char + ' ';
 		}
 	}
 	return newString;
