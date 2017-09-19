@@ -61,6 +61,12 @@
 			"Rarity" : "Common",
 			"ID": 10
 		}
+                ,
+                {
+                        "Name": "monster",
+                        "Rarity" : "Common",
+                        "ID": 11
+                }
 	],
 	
 	"Rarities" :
