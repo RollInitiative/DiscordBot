@@ -12,7 +12,7 @@ module.exports = {
 		var monster = utils.rollFromLootTable(monsterTable);
 		return createHuntReturnString(playerObj, monster);
 	},
-	surprise: function(channel, playerObj) {
+	surprise: function(playerObj) {
 		var monster = utils.rollFromLootTable(monsterTable);
 		return createSurpriseReturnString(playerObj, monster);
 	}
@@ -32,8 +32,8 @@ createHuntReturnString = function(user, monster) {
 	return strMessage;
 }
 
-createSurpriseString = function(user, monster) {
-	var strMessage = `${user.Name} is caught by surprise by a ${item.Name}!`;
+createSurpriseReturnString = function(user, monster) {
+	var strMessage = `${user.Name} is caught by surprise by a ${monster.Name}!`;
 	return strMessage;
 }
 

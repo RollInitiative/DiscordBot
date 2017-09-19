@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const utils = require('./../utils/utils');
-
+const monsters = require('./../monsters/monsters.js') 
 const fishingData = require('./data/fishing.json')
 
 var moduleID;
@@ -11,6 +11,12 @@ module.exports = {
 	
 	fish: function(channel, playerObj) {
 		var item = utils.rollFromLootTable(lootTable);
+
+                if (item.Name == "monster") {
+                  var strMessage = monsters.surprise(playerObj);
+                  strMessage += '\n';
+                  return strMessage;
+                }
 		addItemToUser(playerObj, item);
 		
 		return createReturnString(playerObj, item);
@@ -38,7 +44,7 @@ addItemToUser = function(playerObj, itemObj) {
 }
 
 createReturnString = function(user, item) {
-
+        
 	var strMessage = `${user.Name} caught ${item.Name}!`;
 	if (item.Emote != null) {
 		strMessage += ' ' + item.Emote;
