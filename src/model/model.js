@@ -46,12 +46,12 @@ var processMessage = function(message) {
 			}
 			break;
 
-<<<<<<< HEAD
 		case 'Hunt':
 			var user = users[userID];
 			strMessage += hunting.hunt(message.channel, user);
 			bNeedSaving = false;
-=======
+                        break;
+
 		case 'Replace':
 			if (strCommands.length == 1) {
 				strMessage += 'Replace takes text after the command and replaces it with symbols.';
@@ -60,7 +60,6 @@ var processMessage = function(message) {
 				var strArguments = strCommands.slice(1).join(' ').toLowerCase();
 				strMessage += utils.translateString(strArguments);
 			}
->>>>>>> c8f8d6c6ee3b5e544947cc43ceeb673249a461fb
 			break;
 
 		default:
